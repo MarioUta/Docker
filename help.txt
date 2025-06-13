@@ -1,0 +1,12 @@
+unde \] 
+\begin{itemize}
+    \item $x_i$ = un element din mulțime
+    \item $\mu_j$ = centrul clusterului $j$
+    \item $n$ = numărul de date. 
+\end{itemize}
+
+ \begin{itemize}
+    \item $C_j$ = mulțimea punctelor clusterului $J$ 
+    \item $x_i$ = un punct din cluster
+    \item $\mu_j$ = noul centroid al clusterului $j$ 
+\end{itemize}

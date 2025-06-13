@@ -1,0 +1,23 @@
+# Dockerfile.frontend
+
+FROM node:18
+
+# Set working directory
+WORKDIR /front_end
+
+# Copy package files and install deps
+COPY front_end/package*.json ./
+RUN npm install
+RUN npm install graphology sigma graphology-gexf 
+
+# Copy the rest of the frontend source code
+COPY front_end .
+
+# Build the frontend
+RUN npm run build
+
+# Expose frontend dev port (if needed)
+EXPOSE 5173
+
+# Run dev server (optional, for dev only)
+CMD ["npm", "run", "dev"]

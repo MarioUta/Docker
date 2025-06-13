@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "graphology": "^0.26.0",
+    "graphology-gexf": "^0.13.2",
+    "node": "^24.2.0",
+    "nodemon": "^3.1.10",
+    "server.js": "^1.0.0",
+    "sigma": "^3.0.2"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}

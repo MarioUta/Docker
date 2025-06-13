@@ -1,0 +1,13 @@
+numpy
+pandas
+networkx
+cosine-similarity
+tqdm
+mysql-connector-python
+matplotlib
+websocket-client
+websockets
+scikit-learn
+more-itertools
+sentence-transformers
+k-means-constrained

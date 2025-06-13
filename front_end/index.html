@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Explorer</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+    <!-- Graphology & Sigma Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/graphology/0.25.4/graphology.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/2.4.0/sigma.min.js"></script>
+    <script type="module" src="script.js"></script>
+
+    <div class="container py-4">
+        <!-- Top Controls: Search + Toggle Sidebar -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <!-- Search by Topic -->
+            <form id="searchForm" class="flex-grow-1 me-2">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Search by Topic">
+                    <button class="btn btn-primary" type="submit">Caută după Topic</button>
+                </div>
+            </form>
+
+            <!-- Sidebar Toggle Button -->
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#authorSidebar" aria-controls="authorSidebar">
+                &#9776; Lucrări Autor
+            </button>
+        </div>
+
+        <!-- Toggle Switch -->
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" id="switchSearch">
+            <label class="form-check-label" for="switchSearch">Schimbă modul de căutare</label>
+        </div>
+
+        <!-- Search by Author -->
+        <form id="searchAuthor" class="mb-3">
+            <div class="input-group">
+                <input type="text" class="form-control" id="searchAuthorInput" placeholder="Search by Author">
+                <button class="btn btn-secondary" type="submit">Caută după Autor</button>
+            </div>
+        </form>
+
+        <!-- Reset Button -->
+        <div class="mb-4">
+            <button class="btn btn-danger" id="reset">Resetează</button>
+        </div>
+
+        <!-- Graph Container -->
+        <div id="graph-container" class="border rounded mb-4" style="height: 800px;"></div>
+
+        <!-- Author Search Results -->
+        <h2 class="h4" id="author-results">Rezultate Căutare Autori:</h2>
+        <div id="authors-search-list" class="mb-4"></div>
+
+        <!-- Topic Search Results -->
+        <h2 class="h4" id="topic-results">Rezultate Căutare Topic:</h2>
+        
+        <div class="results-container">
+            <div id="authors-list" class="mb-2"></div>
+            <div id="papers-list"></div>
+        </div>
+
+    </div>
+
+    <!-- Right Sidebar Offcanvas for Author Data -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="authorSidebar" aria-labelledby="authorSidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="authorSidebarLabel">Lucrări Autor</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                id="author-sidebar"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="author-data-list" class="mb-4"></div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (with Popper for components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

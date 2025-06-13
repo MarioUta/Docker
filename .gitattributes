@@ -1,0 +1,2 @@
+myapp_dump.sql filter=lfs diff=lfs merge=lfs -text
+node filter=lfs diff=lfs merge=lfs -text
